@@ -1,3 +1,4 @@
+/*
 package com.example.photo_nest.model;
 
 import javax.persistence.*;
@@ -75,3 +76,4 @@ public class Photo {
         this.photoFileType = photoFileType;
     }
 }
+*/

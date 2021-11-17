@@ -1,3 +1,4 @@
+/*
 package com.example.photo_nest.model;
 
 import javax.persistence.*;
@@ -51,3 +52,4 @@ public class Album {
         this.userId = userId;
     }
 }
+*/
