@@ -8,4 +8,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
 
+    /*@Query(value = "SELECT " +
+            "       u" +
+            "   FROM " +
+            "       User u" +
+            "   WHERE u.user_ID = :user_ID ")
+    User getUserByIDNative(Long idUser);*/
+
 }
