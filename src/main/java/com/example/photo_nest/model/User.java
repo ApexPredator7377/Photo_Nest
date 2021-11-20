@@ -19,6 +19,9 @@ public class User {
     @Column(name = "last_Name")
     private String lastName;
 
+    @Column(name = "login_ID")
+    private String loginID;
+
     @Column(name = "password")
     private String userPassword;
 
@@ -32,12 +35,13 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, String userPassword, String email, char userType) {
+    public User(String firstName, String lastName, String userPassword, String email, char userType, String loginID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userPassword = userPassword;
         this.email = email;
         this.userType = userType;
+        this.loginID = loginID;
     }
 
     public long getUserId() {
@@ -86,5 +90,11 @@ public class User {
 
     public void setUserType(char userType) {
         this.userType = userType;
+    }
+
+    public String getLoginID() {return loginID;}
+
+    public void setLoginID(String loginID) {
+        this.loginID = loginID;
     }
 }
