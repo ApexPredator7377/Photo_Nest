@@ -1,4 +1,4 @@
-/*
+
 package com.example.photo_nest.model;
 
 import javax.persistence.*;
@@ -10,13 +10,13 @@ public class Share {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "share_Id")
+    @Column(name = "share_ID")
     private long shareId;
 
-    @Column(name = "userId_Origin")
+    @Column(name = "user_Id_Origin")
     private long userId_origin;
 
-    @Column(name = "userId_Destination")
+    @Column(name = "user_Id_Destination")
     private long userId_destination;
 
     @Column(name = "photo_ID")
@@ -64,4 +64,3 @@ public class Share {
         this.photoID = photoID;
     }
 }
-*/

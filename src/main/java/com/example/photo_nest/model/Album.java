@@ -1,4 +1,4 @@
-/*
+
 package com.example.photo_nest.model;
 
 import javax.persistence.*;
@@ -10,13 +10,13 @@ public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "user_ID")
+    @Column(name = "album_ID")
     private long albumId;
 
-    @Column(name = "first_Name")
+    @Column(name = "photo_ID")
     private long photoId;
 
-    @Column(name = "last_Name")
+    @Column(name = "user_ID")
     private long userId;
 
     public Album() {
@@ -52,4 +52,4 @@ public class Album {
         this.userId = userId;
     }
 }
-*/
+

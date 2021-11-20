@@ -1,4 +1,4 @@
-/*
+
 package com.example.photo_nest.model;
 
 import javax.persistence.*;
@@ -10,19 +10,19 @@ public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "photoId")
+    @Column(name = "photo_ID")
     private long photoId;
 
-    @Column(name = "userId")
+    @Column(name = "user_ID")
     private long userId;
 
-    @Column(name = "photoURL")
+    @Column(name = "photo_URL")
     private String photoURL;
 
-    @Column(name = "photoDateCreated")
+    @Column(name = "photo_Date_Created")
     private String photoDateCreated;
 
-    @Column(name = "photoFileType")
+    @Column(name = "photo_File_Type")
     private String photoFileType;
 
     public Photo() {
@@ -76,4 +76,3 @@ public class Photo {
         this.photoFileType = photoFileType;
     }
 }
-*/
