@@ -19,9 +19,7 @@ export default class UserComp extends Component {
   }
 
   componentDidMount() {
-    {
-      /* Check video 6? */
-    }
+    {}
 
     UserService.getUsers().then((res) => {
       this.setState({ users: res.data });
@@ -41,7 +39,7 @@ export default class UserComp extends Component {
   }
 
   addUser() {
-    this.props.history.push("/add-users");
+    this.props.history.push("/add_user");
   }
 
   render() {
@@ -67,8 +65,7 @@ export default class UserComp extends Component {
                 <th> User Type</th>
                 <th> User Email Address</th>
                 <th> User Password</th>
-
-                <th> {/*Button Actions Column*/} </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -121,54 +118,3 @@ export default class UserComp extends Component {
     );
   }
 }
-
-// import React, { Component } from 'react';
-
-// class ListUserComponent extends Component {
-//     constructor(props) {
-//         super(props);
-    
-//         this.state = {
-//             users: []
-//         }
-//       }
-    
-//     render() {
-//         return (
-//             <div>
-//                 <h2 className="text-center">User List</h2>
-//                 <div className = "row">
-//                     <table  className = "table table-striped table-bordered">
-//                         <thead>
-//                             <tr>
-//                                 <th> User First Name</th>
-//                                 <th> User Last Name</th>
-//                                 <th> User Type</th>
-//                                 <th> User Email</th>
-//                                 <th> User Password</th>
-//                                 <th> Actions</th>
-//                             </tr>
-//                         </thead>
-
-//                         <tbody>
-//                             {
-//                                 this.state.users.map(
-//                                     user =>
-//                                     <tr key = {user.id}>
-//                                         <td>{ user.firstName}</td>
-//                                         <td>{ user.lastName}</td>
-//                                         <td>{ user.type}</td>
-//                                         <td>{ user.email}</td>
-//                                         <td>{ user.password}</td>
-//                                     </tr>
-//                                 )
-//                             }
-//                         </tbody>
-//                     </table>
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
-
-// export default ListUserComponent;
