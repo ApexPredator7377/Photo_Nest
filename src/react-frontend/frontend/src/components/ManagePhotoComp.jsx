@@ -4,6 +4,8 @@ import { Button } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import SearchIcon from '@mui/icons-material/Search';
+import Search from "@mui/icons-material/Search";
 
 export default class ManagePhotoComp extends Component {
   constructor(props) {
@@ -39,18 +41,70 @@ export default class ManagePhotoComp extends Component {
     this.props.history.push("/upload_photos");
   }
 
+  metaSearch(photoMeta) {
+    PhotoService.getMetaType(photoMeta).then((res) => {
+      this.setState({
+        photoMeta: this.state.photoMeta.filter(
+          (photoMeta) => photoMeta !== photoMeta
+        ),
+      });
+    });
+  }
+
   render() {
     return (
       <div>
         <h3 className="text-center">Photos</h3>
+        <div className="search">
+          <label>Search Image By Type: </label>
+          <input
+            placeholder="eg. jpg"
+            name="photoFileType"
+            className="form-control"
+            onChange={() => {
+              this.metaSearch(this.type);
+            }}
+          />
+
+            <label>Author ID: </label>
+          <input
+            placeholder="eg. 2 - Chris"
+            name="userID"
+            className="form-control"
+            onChange={() => {
+              this.metaSearch(this.userID);
+            }}
+          />
+
+            <label>Date: </label>
+          <input
+            placeholder="eg. 2020-05-14"
+            name="photoDateCreated"
+            className="form-control"
+            onChange={() => {
+              this.metaSearch(this.photoDateCreated);
+            }}
+            />
+        </div>
         <div className="div">
           <Button
+            style={{ marginLeft: "10px" }}
             color="success"
             variant="contained"
             startIcon={<AddBoxIcon />}
             onClick={this.addPhoto}
           >
             Add Photo{" "}
+          </Button>
+
+          <Button
+            style={{ marginLeft: "10px" }}
+            color="secondary"
+            variant="contained"
+            startIcon={<Search />}
+            onClick={this.metaSearch}
+          >
+            Search{" "}
           </Button>
         </div>
         <div className="row">

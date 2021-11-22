@@ -7,8 +7,8 @@ class PhotoService {
     return axios.get(PHOTO_API_BASE_URL);
   }
 
-  getPhotosByName(photoName) {
-    return axios.get(PHOTO_API_BASE_URL + "/" + photoName);
+  getMetaType(photoMeta) {
+    return axios.get(PHOTO_API_BASE_URL + "/" + photoMeta);
   }
 
   createPhoto(photo) {
