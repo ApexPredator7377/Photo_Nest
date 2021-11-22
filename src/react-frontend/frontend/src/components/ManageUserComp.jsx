@@ -6,7 +6,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default class UserComp extends Component {
+export default class ManageUserComp extends Component {
   constructor(props) {
     super(props);
 
@@ -28,9 +28,7 @@ export default class UserComp extends Component {
 
   deleteUser(id) {
     UserService.deleteUser(id).then((res) => {
-      this.setState({
-        users: this.state.users.filter((user) => user.id !== user.id),
-      });
+      this.setState({users: this.state.users.filter(user => user.id !== user.id)});
     });
   }
 
@@ -95,17 +93,10 @@ export default class UserComp extends Component {
                         color="error"
                         variant="contained"
                         startIcon={<DeleteIcon />}
-                        onClick={() => {
-                          if (
-                            window.confirm(
-                              "Are you sure you wish to delete this user?"
-                            )
-                          )
-                            this.deleteUser(User.userId);
-                        }}
+                        onClick={() => {if (window.confirm("Are you sure? This action cannot be undone!")) this.deleteUser(User.userId);}}
                         classname="p-5"
                       >
-                        Delete
+                        Remove
                       </Button>
                     </div>
                   </td>

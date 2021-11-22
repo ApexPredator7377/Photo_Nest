@@ -25,7 +25,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import FooterComp from "./components/FooterComp";
 import HeaderComp from "./components/HeaderComp";
-import UserComp from "./components/UserComp";
+import ManageUserComp from "./components/ManageUserComp";
 import AddUserComp from "./components/AddUserComp";
 import UpdateUserComp from "./components/UpdateUserComp";
 // import LoginComponent from "./components/LoginComponent";
@@ -39,8 +39,8 @@ function App() {
         <HeaderComp />
         <div className="container">
           <Switch>
-            <Route path="/" exact component={UserComp}></Route>
-            <Route path="/users" component={UserComp}></Route>
+            <Route path="/" exact component={ManageUserComp}></Route>
+            <Route path="/users" component={ManageUserComp}></Route>
             <Route path="/add_user" component={AddUserComp}></Route>
             <Route path="/update_users/:id" component={UpdateUserComp}></Route>
             {/*<Route path="/login" exact component={LoginComponent}></Route>
