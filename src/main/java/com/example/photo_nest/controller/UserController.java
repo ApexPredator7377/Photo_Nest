@@ -30,7 +30,6 @@ public class UserController {
         return userRepo.save(user);
     }
 
-    //Add to other controllers from here
     @GetMapping("{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         User user = userRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with ID: " + id + " ,does not exist."));
