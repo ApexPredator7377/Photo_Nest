@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UserService from "../services/UserService";
-import { /*Container,*/ Button } from "@mui/material";
-//import Grid from "@mui/material/Grid";
+import { Button } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -43,7 +42,7 @@ export default class ManageUserComp extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">List of Users</h2>
+        <h2 className="text-center">Users</h2>
         <div className="div">
           <Button
             color="success"
@@ -62,7 +61,6 @@ export default class ManageUserComp extends Component {
                 <th> User Last Name</th>
                 <th> User Type</th>
                 <th> User Email Address</th>
-                <th> User Password</th>
                 <th></th>
               </tr>
             </thead>
@@ -73,7 +71,6 @@ export default class ManageUserComp extends Component {
                   <td>{User.lastName}</td>
                   <td>{User.userType}</td>
                   <td>{User.email}</td>
-                  <td>{User.userPassword}</td>
                   <td>
                     <div className="div">
                       <Button

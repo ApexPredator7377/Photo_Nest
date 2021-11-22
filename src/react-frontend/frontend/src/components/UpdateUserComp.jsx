@@ -31,7 +31,6 @@ export default class UpdateUserComponent extends Component {
         lastName: user.lastName,
         userType: user.userType,
         email: user.email,
-        userPassword: user.userPassword
       });
     });
   }
@@ -84,7 +83,7 @@ export default class UpdateUserComponent extends Component {
         <div className="container p-5">
           <div className="row">
             <div class="card col-md-6 ofsett-md-3 offset-md-3">
-              <h3 className="text-centre p-2"> Update User</h3>
+              <h3 className="text-centre p-2"> Edit User</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -127,7 +126,7 @@ export default class UpdateUserComponent extends Component {
                     <label>Password: </label>
                     <input
                       autocomplete="off"
-                      placeholder="E.g. 1Am1r0nMan"
+                      placeholder="******"
                       name="userPassword"
                       className="form-control"
                       value={this.state.userPassword}
@@ -139,7 +138,7 @@ export default class UpdateUserComponent extends Component {
                     className="btn btn-success m-2"
                     onClick={this.updateHandler}
                   >
-                    Update
+                    Confirm
                   </button>
 
                   <button
