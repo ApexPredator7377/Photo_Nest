@@ -4,6 +4,7 @@ import com.example.photo_nest.model.Share;
 import com.example.photo_nest.model.User;
 import com.example.photo_nest.repository.ShareRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,4 +25,10 @@ public class ShareController {
     public Share createShare(@RequestBody Share share) {
         return ShareRepo.save(share);
     }
+
+//    @GetMapping("{id}")
+//    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+//        User user = ShareRepo.getUserByIDNative(id);
+//        return ResponseEntity.ok(user);
+//    }
 }

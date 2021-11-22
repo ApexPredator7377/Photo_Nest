@@ -1,30 +1,43 @@
 import React, { Component } from "react";
 import UserService from "../services/UserService";
 
-export default class CreateUserComponent extends Component {
+export default class UpdateUserComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
-      firstName: "",
-      lastName: "",
-      userType: "",
-      email: "",
-      userPassword: "",
-    };
+        id: this.props.match.params.id,
+        firstName: "",
+        lastName: "",
+        userType: "",
+        email: "",
+        userPassword: "",
+      };
 
     this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
     this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
     this.changeUserTypeHandler = this.changeUserTypeHandler.bind(this);
     this.changeEmailHandler = this.changeEmailHandler.bind(this);
     this.changeUserPasswordHandler = this.changeUserPasswordHandler.bind(this);
-    this.saveHandler = this.saveHandler.bind(this);
+    this.updateHandler = this.updateHandler.bind(this);
     this.returnHandler = this.returnHandler.bind(this);
   }
 
-  saveHandler = (sU) => {
-    sU.preventDefault();
+  componentDidMount() {
+    UserService.getUserById(this.state.id).then((res) => {
+      let user = res.data;
+      this.setState({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        userType: user.userType,
+        email: user.email,
+        userPassword: user.userPassword
+      });
+    });
+  }
+
+  updateHandler = (e) => {
+    e.preventDefault();
     let user = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -32,9 +45,10 @@ export default class CreateUserComponent extends Component {
       email: this.state.email,
       userPassword: this.state.userPassword,
     };
-    console.log("user=> " + JSON.stringify(user));
+    console.log("user => " + JSON.stringify(user));
+    console.log("id => " + JSON.stringify(this.state.id));
 
-    UserService.createUser(user).then((res) => {
+    UserService.updateUser(user, this.state.id).then((res) => {
       this.props.history.push("/users");
     });
   };
@@ -66,15 +80,15 @@ export default class CreateUserComponent extends Component {
   render() {
     return (
       <div>
+        <br></br>
         <div className="container p-5">
           <div className="row">
             <div class="card col-md-6 ofsett-md-3 offset-md-3">
-              <h3 className="text-centre p-2 div"> Add User </h3>
+              <h3 className="text-centre p-2"> Update User</h3>
               <div className="card-body">
                 <form>
                   <div className="form-group">
-
-                    <label>First Name: </label>
+                  <label>First Name: </label>
                     <input
                       placeholder="E.g. Tony"
                       name="firstName"
@@ -123,9 +137,9 @@ export default class CreateUserComponent extends Component {
                   </div>
                   <button
                     className="btn btn-success m-2"
-                    onClick={this.saveHandler}
+                    onClick={this.updateHandler}
                   >
-                    Save
+                    Update
                   </button>
 
                   <button

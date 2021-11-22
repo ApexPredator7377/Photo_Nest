@@ -35,7 +35,7 @@ export default class UserComp extends Component {
   }
 
   editUser(id) {
-    this.props.history.push(`/update-users/${id}`);
+    this.props.history.push(`/update_users/${id}`);
   }
 
   addUser() {

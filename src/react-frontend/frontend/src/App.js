@@ -27,7 +27,7 @@ import FooterComp from "./components/FooterComp";
 import HeaderComp from "./components/HeaderComp";
 import UserComp from "./components/UserComp";
 import AddUserComp from "./components/AddUserComp";
-// import UpdateUserComponent from "./components/UpdateUserComponent";
+import UpdateUserComp from "./components/UpdateUserComp";
 // import LoginComponent from "./components/LoginComponent";
 // import RegisterComponent from "./components/RegisterComponent";
 // import UploadImageComponent from "./components/UploadImageComponent";
@@ -42,11 +42,8 @@ function App() {
             <Route path="/" exact component={UserComp}></Route>
             <Route path="/users" component={UserComp}></Route>
             <Route path="/add_user" component={AddUserComp}></Route>
-            {/*<Route
-              path="/update-users/:id"
-              component={UpdateUserComponent}
-            ></Route>
-            <Route path="/login" exact component={LoginComponent}></Route>
+            <Route path="/update_users/:id" component={UpdateUserComp}></Route>
+            {/*<Route path="/login" exact component={LoginComponent}></Route>
             <Route path="/register" exact component={RegisterComponent}></Route>
             <Route
               path="/upload_photos"
