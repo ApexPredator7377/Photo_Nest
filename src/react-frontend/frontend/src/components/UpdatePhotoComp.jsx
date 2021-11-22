@@ -108,7 +108,7 @@ export default class UpdatePhotoComponent extends Component {
                       onChange={this.changePhotoDateCreatedHandler}
                     />
 
-                    <label>Autor User ID: </label>
+                    <label>Author User ID: </label>
                     <input
                       placeholder="E.g. 1 - Nathan"
                       name="userId"
