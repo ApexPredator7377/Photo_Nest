@@ -19,13 +19,17 @@ public class Album {
     @Column(name = "user_ID")
     private long userId;
 
+    @Column(name = "album_No")
+    private long albumNo;
+
     public Album() {
 
     }
 
-    public Album(long photoId, long userId) {
+    public Album(long photoId, long userId, long albumNo) {
         this.photoId = photoId;
         this.userId = userId;
+        this.albumNo = albumNo;
     }
 
     public long getAlbumId() {
@@ -50,6 +54,14 @@ public class Album {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public long getAlbumNo() {
+        return albumNo;
+    }
+
+    public void setAlbumNo(long albumNo) {
+        this.albumNo = albumNo;
     }
 }
 
