@@ -24,7 +24,7 @@ public class AlbumController {
     }
 
     @PostMapping("")
-    public Album createPhoto(@RequestBody Album album) {
+    public Album createAlbum(@RequestBody Album album) {
         return AlbumRepo.save(album);
     }
 

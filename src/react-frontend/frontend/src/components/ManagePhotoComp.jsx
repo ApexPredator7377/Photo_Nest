@@ -4,7 +4,6 @@ import { Button } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SearchIcon from '@mui/icons-material/Search';
 import Search from "@mui/icons-material/Search";
 
 export default class ManagePhotoComp extends Component {
@@ -17,6 +16,7 @@ export default class ManagePhotoComp extends Component {
     this.addPhoto = this.addPhoto.bind(this);
     this.editPhoto = this.editPhoto.bind(this);
     this.deletePhoto = this.deletePhoto.bind(this);
+    this.addAlbum = this.addAlbum.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +39,10 @@ export default class ManagePhotoComp extends Component {
 
   addPhoto() {
     this.props.history.push("/upload_photos");
+  }
+
+  addAlbum() {
+    this.props.history.push("/album");
   }
 
   metaSearch(photoMeta) {
@@ -95,6 +99,16 @@ export default class ManagePhotoComp extends Component {
             onClick={this.addPhoto}
           >
             Add Photo{" "}
+          </Button>
+
+          <Button
+            style={{ marginLeft: "10px" }}
+            color="success"
+            variant="contained"
+            startIcon={<AddBoxIcon />}
+            onClick={this.addAlbum}
+          >
+            Add Album{" "}
           </Button>
 
           <Button

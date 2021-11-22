@@ -9,6 +9,8 @@ import UpdateUserComp from "./components/UpdateUserComp";
 import ManagePhotoComp from "./components/ManagePhotoComp";
 import AddPhotoComp from "./components/AddPhotoComp";
 import UpdatePhotoComp from "./components/UpdatePhotoComp";
+import AddAlbumComp from "./components/AddAlbumComp";
+import AddShareComp from "./components/AddShareComp";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/update_users/:id" component={UpdateUserComp}></Route>
             <Route path="/photos" exact component={ManagePhotoComp}></Route>
             <Route path="/upload_photos" exact component={AddPhotoComp}></Route>
+            <Route path="/album" exact component={AddAlbumComp}></Route>
+            <Route path="/share" exact component={AddShareComp}></Route>
             <Route path="/update_photos/:id" exact component={UpdatePhotoComp}></Route>
           </Switch>
         </div>
