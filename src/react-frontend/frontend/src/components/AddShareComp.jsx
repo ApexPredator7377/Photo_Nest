@@ -12,8 +12,8 @@ export default class AddShareComp extends Component {
       photoId: "",
     };
 
-    this.changeUserIdOriginHandler = this.changeUserIdOriginHandler.bind(this);
-    this.changeUserIdDestinationHandler = this.changeUserIdDestinationHandler.bind(this);
+    this.changeOriginHandler = this.changeOriginHandler.bind(this);
+    this.changeDestinationHandler = this.changeDestinationHandler.bind(this);
     this.changePhotoIdHandler = this.changePhotoIdHandler.bind(this);
     this.saveHandler = this.saveHandler.bind(this);
     this.returnHandler = this.returnHandler.bind(this);
@@ -33,11 +33,11 @@ export default class AddShareComp extends Component {
     });
   };
 
-  changeUserIdOriginHandler(event) {
+  changeOriginHandler(event) {
     this.setState({ userIdOrigin: event.target.value });
   }
 
-  changeUserIdDestinationHandler(event) {
+  changeDestinationHandler(event) {
     this.setState({ userIdDestination: event.target.value });
   }
 
@@ -75,7 +75,7 @@ export default class AddShareComp extends Component {
                       name="userIdOrigin"
                       className="form-control"
                       value={this.state.userIdOrigin}
-                      onChange={this.changeUserIdOriginHandler}
+                      onChange={this.changeOriginHandler}
                     />
 
                     <label>To User With Id: </label>
@@ -84,7 +84,7 @@ export default class AddShareComp extends Component {
                       name="userIdDestination"
                       className="form-control"
                       value={this.state.userIdDestination}
-                      onChange={this.changeUserIdDestinationHandler}
+                      onChange={this.changeDestinationHandler}
                     />
 
                   </div>
